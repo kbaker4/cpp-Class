@@ -25,7 +25,7 @@ int _tmain(int argc, _TCHAR* argv[])
   */
   Queue myQueue;
 
-  myQueue.removeItem();
+  //myQueue.removeItem();
   myQueue.addItem("red");
   myQueue.addItem("green");
   myQueue.addItem("blue");
@@ -33,8 +33,6 @@ int _tmain(int argc, _TCHAR* argv[])
   myQueue.print();  // print contents of queue (item ID and data)
 
   myQueue.removeItem();
-
-  std::cout << "hi" << std::endl;
 
 	return 0;
 }
