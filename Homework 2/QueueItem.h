@@ -1,4 +1,6 @@
 #pragma once
+#include <iostream>
+
 class QueueItem
 {
   public:
@@ -12,7 +14,7 @@ class QueueItem
     const char* getData() const;
 
   private:
-    char _data;    // data value (null terminated character string)
+    char _data[30];    // data value (null terminated character string)
     const int _itemId; // unique id for item in queue
     QueueItem* _pNext; // next item in queue
 

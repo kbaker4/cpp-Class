@@ -32,7 +32,7 @@ int _tmain(int argc, _TCHAR* argv[])
   myQueue.addItem("orange");
   myQueue.print();  // print contents of queue (item ID and data)
 
-  myQueue.removeItem();
+ // myQueue.removeItem();
 
 	return 0;
 }
