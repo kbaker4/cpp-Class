@@ -25,14 +25,35 @@ int _tmain(int argc, _TCHAR* argv[])
   */
   Queue myQueue;
 
-  //myQueue.removeItem();
+  myQueue.removeItem();
+
   myQueue.addItem("red");
   myQueue.addItem("green");
   myQueue.addItem("blue");
   myQueue.addItem("orange");
+
   myQueue.print();  // print contents of queue (item ID and data)
 
- // myQueue.removeItem();
+  myQueue.removeItem();
+  myQueue.removeItem();
+
+  myQueue.addItem("pink");
+  myQueue.addItem("purple");
+  myQueue.addItem("maroon");
+  myQueue.addItem("cyan");
+
+  myQueue.print();
+
+  myQueue.removeItem();
+  myQueue.removeItem(); 
+  myQueue.removeItem();
+  myQueue.removeItem();
+
+  myQueue.print();
+
+  myQueue.erase();
+
+  myQueue.print();
 
 	return 0;
 }
