@@ -121,7 +121,7 @@ int main()
     if (0 != 0)  // only a compilation check for these methods at this point (for const). Tested further below.
     {
       const TString s0(pHello); // create a const TString object
-     /* int n = s0.length();
+      /* int n = s0.length();
       //bool f = s0.equalsIgnoreCase(pHello);
       bool f = s0.equals(pHello);
       const char *p = s0.asChar();
@@ -162,20 +162,20 @@ int main()
     }
 
 
-    // Copy ctor
-    outstream << "\n----- Step " << ++step << " - copy ctor -----" << endl;
-    {
-      TString s0(copyToTemp(pHiMom));
-      clearTemp();
-      TString s1(s0);  // copy ctor
-      outstream << "s1 using copy ctor = \"" << s1.asChar() << "\" (length = " << s1.length() << ")" << endl;
-      mp = (s1.length() == s0.length() && s1.length() == strlen(pHiMom)) ? "OK: " : "ERROR: ";
-      outstream << mp << "length = " << s1.length() << endl;
-      mp = (s1.asChar() != s0.asChar()) ? "OK: different " : "ERROR: same ";
-      outstream << mp << "pointer value returned from asChar()" << endl;
-      mp = (0 == strcmp(s1.asChar(), pHiMom)) ? "OK: " : "ERROR: ";
-      outstream << mp << "value is \"" << s1.asChar() << "\"" << endl;
-    }
+  // Copy ctor
+  outstream << "\n----- Step " << ++step << " - copy ctor -----" << endl;
+  {
+    TString s0(copyToTemp(pHiMom));
+    clearTemp();
+    TString s1(s0);  // copy ctor
+    outstream << "s1 using copy ctor = \"" << s1.asChar() << "\" (length = " << s1.length() << ")" << endl;
+    mp = (s1.length() == s0.length() && s1.length() == strlen(pHiMom)) ? "OK: " : "ERROR: ";
+    outstream << mp << "length = " << s1.length() << endl;
+    mp = (s1.asChar() != s0.asChar()) ? "OK: different " : "ERROR: same ";
+    outstream << mp << "pointer value returned from asChar()" << endl;
+    mp = (0 == strcmp(s1.asChar(), pHiMom)) ? "OK: " : "ERROR: ";
+    outstream << mp << "value is \"" << s1.asChar() << "\"" << endl;
+  }
     {
       // Check copy of empty string
       TString s0;
@@ -205,20 +205,20 @@ int main()
       outstream << mp << "at position 0" << endl;
     }
 
-    // assign
-    outstream << "\n----- Step " << ++step << " - assign -----" << endl;
-    {
-      TString s0;
-      s0.assign(copyToTemp(pHello));  // assign with char* parameter
-      clearTemp();
-      outstream << "s0 using assign with char* parameter = \"" << s0.asChar() << "\" (length = " << s0.length() << ")" << endl;
-      mp = (s0.length() == strlen(pHello)) ? "OK: " : "ERROR: ";
-      outstream << mp << "length = " << s0.length() << endl;
-      mp = (0 == strcmp(s0.asChar(), pHello)) ? "OK: " : "ERROR: ";
-      outstream << mp << "value is \"" << s0.asChar() << "\"" << endl;
-      mp = (s0.asChar() != pHello) ? "OK: different " : "ERROR: same ";
-      outstream << mp << "pointer value returned from asChar()" << endl;
-    }
+  // assign
+  outstream << "\n----- Step " << ++step << " - assign -----" << endl;
+  {
+    TString s0;
+    s0.assign(copyToTemp(pHello));  // assign with char* parameter
+    clearTemp();
+    outstream << "s0 using assign with char* parameter = \"" << s0.asChar() << "\" (length = " << s0.length() << ")" << endl;
+    mp = (s0.length() == strlen(pHello)) ? "OK: " : "ERROR: ";
+    outstream << mp << "length = " << s0.length() << endl;
+    mp = (0 == strcmp(s0.asChar(), pHello)) ? "OK: " : "ERROR: ";
+    outstream << mp << "value is \"" << s0.asChar() << "\"" << endl;
+    mp = (s0.asChar() != pHello) ? "OK: different " : "ERROR: same ";
+    outstream << mp << "pointer value returned from asChar()" << endl;
+  }
     {
       TString s0(copyToTemp(pHiMom));
       clearTemp();
@@ -272,21 +272,21 @@ int main()
       outstream << mp << "\"" << emptyString << "\"" << endl;
     }
 
-    // Test null pointer and null string args
-    outstream << "\n----- Step " << ++step << " - Null ptr and empty string -----" << endl;
-    {
-      TString s1(copyToTemp("not empty"));
-      clearTemp();
-      outstream << endl << "Assigning empty string to s1 = \"" << s1.asChar() << "\"" << endl;
-      s1.assign(emptyString);
-      outstream << "s1 = \"" << s1.asChar() << "\" (length = " << s1.length() << ")" << endl;
-      mp = (s1.equals("")) ? "OK: matches " : "ERROR: doesn't match ";
-      outstream << mp << "\"" << emptyString << "\"" << endl;
-      mp = (0 == s1.length()) ? "OK: " : "ERROR: ";
-      outstream << mp << "length = " << s1.length() << endl;
-      mp = (0 != s1.asChar()) ? "OK: " : "ERROR: ";
-      outstream << mp << "asChar() return value " << hex << "0x" << reinterpret_cast<const int *>(s1.asChar()) << dec << endl;
-    }
+  // Test null pointer and null string args
+  outstream << "\n----- Step " << ++step << " - Null ptr and empty string -----" << endl;
+  {
+    TString s1(copyToTemp("not empty"));
+    clearTemp();
+    outstream << endl << "Assigning empty string to s1 = \"" << s1.asChar() << "\"" << endl;
+    s1.assign(emptyString);
+    outstream << "s1 = \"" << s1.asChar() << "\" (length = " << s1.length() << ")" << endl;
+    mp = (s1.equals("")) ? "OK: matches " : "ERROR: doesn't match ";
+    outstream << mp << "\"" << emptyString << "\"" << endl;
+    mp = (0 == s1.length()) ? "OK: " : "ERROR: ";
+    outstream << mp << "length = " << s1.length() << endl;
+    mp = (0 != s1.asChar()) ? "OK: " : "ERROR: ";
+    outstream << mp << "asChar() return value " << hex << "0x" << reinterpret_cast<const int *>(s1.asChar()) << dec << endl;
+  }
     {
       TString s1(copyToTemp("still not empty"));
       clearTemp();
@@ -301,97 +301,95 @@ int main()
       outstream << mp << "asChar() return value " << hex << "0x" << reinterpret_cast<const int *>(s1.asChar()) << dec << endl;
     }
 
-    // indexOf
-    outstream << "\n----- Step " << ++step << " - indexOf -----" << endl;
-    {
-      TString s0(copyToTemp("Hi and hello"));
-      clearTemp();
-      int pos = s0.indexOf('H');
-      mp = (0 == pos) ? "OK: 'H' found " : "ERROR: 'H' not found ";
-      outstream << mp << " - indexOf = " << pos << endl;
-      pos = s0.indexOf('h');
-      mp = (7 == pos) ? "OK: 'h' found " : "ERROR: 'h' not found ";
-      outstream << mp << " - indexOf = " << pos << endl;
-      pos = s0.indexOf('o');
-      mp = (11 == pos) ? "OK: 'o' found " : "ERROR: 'o' not found ";
-      outstream << mp << " - indexOf = " << pos << endl;
-      pos = s0.indexOf('z');
-      mp = (-1 == pos) ? "OK: 'z' not found " : "ERROR: 'z' should return -1 ";
-      outstream << mp << " - indexOf = " << pos << endl;
-    }
+  // indexOf
+  outstream << "\n----- Step " << ++step << " - indexOf -----" << endl;
+  {
+    TString s0(copyToTemp("Hi and hello"));
+    clearTemp();
+    int pos = s0.indexOf('H');
+    mp = (0 == pos) ? "OK: 'H' found " : "ERROR: 'H' not found ";
+    outstream << mp << " - indexOf = " << pos << endl;
+    pos = s0.indexOf('h');
+    mp = (7 == pos) ? "OK: 'h' found " : "ERROR: 'h' not found ";
+    outstream << mp << " - indexOf = " << pos << endl;
+    pos = s0.indexOf('o');
+    mp = (11 == pos) ? "OK: 'o' found " : "ERROR: 'o' not found ";
+    outstream << mp << " - indexOf = " << pos << endl;
+    pos = s0.indexOf('z');
+    mp = (-1 == pos) ? "OK: 'z' not found " : "ERROR: 'z' should return -1 ";
+    outstream << mp << " - indexOf = " << pos << endl;
+  }
 
-    // Test many dynamic operations (this may take some time).
-    // If the program aborts in this section, look at the code in the String ctors,
-    // dtor, copy ctor, and assignment method to verify that dynamic memory
-    // is managed correctly.
-    outstream << "\n----- Step " << ++step << " - Heap memory use -----" << endl;
-    outstream << "Heap use test (this could take a minute or two): " << endl;
+  // Test many dynamic operations (this may take some time).
+  // If the program aborts in this section, look at the code in the String ctors,
+  // dtor, copy ctor, and assignment method to verify that dynamic memory
+  // is managed correctly.
+  outstream << "\n----- Step " << ++step << " - Heap memory use -----" << endl;
+  /*outstream << "Heap use test (this could take a minute or two): " << endl;
+  {
+    TString s2;
+    TString t1;
+    for (int iter = 0; iter < 50000; ++iter)
     {
-      TString s2;
-      TString t1;
-      for (int iter = 0; iter < 50000; ++iter)
+      s2.assign(emptyString);
+      TString t1(s2);
+      for (int nc = 0; nc < 200; ++nc)
       {
-        s2.assign(emptyString);
-        TString t1(s2);
-        for (int nc = 0; nc < 200; ++nc)
-        {
-          s2.assign(copyToTemp("0000000000111111111122222222223333333333444444444455555555556666666666777777777788888888889999999999"));
-          clearTemp();
-          s2.length();
-          s2.asChar();
-          t1.assign(s2);
-          clearTemp();
-          s2.assign(copyToTemp("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"));
-          clearTemp();
-          t1.assign(s2);
-          clearTemp();
-          t1.length();
-          t1.asChar();
-          s2.assign(copyToTemp(""));
-          clearTemp();
-          s2.asChar();
-          t1.assign(static_cast<const char *>(0));
-          t1.asChar();
-        }
-        TString t2;
-        t2.assign(s2);
-        t2.assign(copyToTemp("xyzzy"));
+        s2.assign(copyToTemp("0000000000111111111122222222223333333333444444444455555555556666666666777777777788888888889999999999"));
         clearTemp();
-        t2.assign(t1);
-        t2.assign(t2);
-        t2.assign(static_cast<const char *>(0));
-        t2.asChar();
-        if (iter % 100 == 0)
-        {
-          outstream << "." << flush;
-        }
+        s2.length();
+        s2.asChar();
+        t1.assign(s2);
+        clearTemp();
+        s2.assign(copyToTemp("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"));
+        clearTemp();
+        t1.assign(s2);
+        clearTemp();
+        t1.length();
+        t1.asChar();
+        s2.assign(copyToTemp(""));
+        clearTemp();
+        s2.asChar();
+        t1.assign(static_cast<const char *>(0));
+        t1.asChar();
       }
-      outstream << "completed" << endl;
-    }
-
-    // Testing dynamically allocated String objects. Uses the -> member selection operator for a
-    // pointer to an object.
-    outstream << "\n----- Step " << ++step << " - Heap Strings -----" << endl;
-    {
-      TString *sp = new TString;  // Create a heap based String object (sp points to it)
-      sp->assign(copyToTemp(pHi));
+      TString t2;
+      t2.assign(s2);
+      t2.assign(copyToTemp("xyzzy"));
       clearTemp();
-      outstream << "sp = \"" << sp->asChar() << "\" (length = " << sp->length() << ")" << endl;
-      mp = (sp->equals(pHi)) ? "OK: matches " : "ERROR: doesn't match ";
-      outstream << mp << "\"" << pHi << "\"" << endl;
-      mp = (!sp->equals(emptyString)) ? "OK: doesn't match " : "ERROR: matches ";
-      outstream << mp << "\"" << emptyString << "\"" << endl;
-      outstream << sp->asChar() << endl;
-
-      const char* cp = sp->asChar();  // ptr to char array
-      int cpLen = sp->length();
-      delete sp;  // Free the heap based String object.
+      t2.assign(t1);
+      t2.assign(t2);
+      t2.assign(static_cast<const char *>(0));
+      t2.asChar();
+      if (iter % 100 == 0)
+      {
+        outstream << "." << flush;
+      }
     }
+    outstream << "completed" << endl;
+  }*/
 
-    outstream << endl << "\nTest of simple String class completed" << endl << endl;
+  // Testing dynamically allocated String objects. Uses the -> member selection operator for a
+  // pointer to an object.
+  outstream << "\n----- Step " << ++step << " - Heap Strings -----" << endl;
+  {
+    TString *sp = new TString;  // Create a heap based String object (sp points to it)
+    sp->assign(copyToTemp(pHi));
+    clearTemp();
+    outstream << "sp = \"" << sp->asChar() << "\" (length = " << sp->length() << ")" << endl;
+    mp = (sp->equals(pHi)) ? "OK: matches " : "ERROR: doesn't match ";
+    outstream << mp << "\"" << pHi << "\"" << endl;
+    mp = (!sp->equals(emptyString)) ? "OK: doesn't match " : "ERROR: matches ";
+    outstream << mp << "\"" << emptyString << "\"" << endl;
+    outstream << sp->asChar() << endl;
 
-    outfile.close();
-    return 0;
+    const char* cp = sp->asChar();  // ptr to char array
+    int cpLen = sp->length();
+    delete sp;  // Free the heap based String object.
+  }
+
+  outstream << endl << "\nTest of simple String class completed" << endl << endl;
+
+  outfile.close();
+  return 0;
 }
-
-

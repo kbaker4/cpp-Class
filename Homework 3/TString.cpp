@@ -9,19 +9,22 @@ TString::TString(const char *pText) {
   if (pText == 0 || sizeof(pText) == 1){
     //initialize this String object to point at a dynamically allocated character array of length 1
     mpText = new char[1];
+    mpText[0] = '\0';
   }
   else{
     //dynamically allocates a char array of the same size as the parameter char array, and copies the parameter char data into it
-    int length = strlen(pText);
-    mpText = new char[length];
-    strncpy(mpText, pText, length);
-    mLength = length;
+    int len = strlen(pText);
+    mpText = new char[len + 1];
+    strncpy(mpText, pText, len + 1);
+    mLength = len;
   }
 }
 
 TString::TString(const TString& rObj){ // copy ctor
-  strncpy(this->mpText, rObj.mpText, strlen(rObj.mpText));
-  this->mLength = rObj.mLength;
+  int len = strlen(rObj.mpText);
+  mpText = new char[len + 1];
+  strncpy(mpText, rObj.mpText, len + 1);
+  mLength = rObj.mLength;
 }
 
 const int TString::length(){
@@ -40,10 +43,12 @@ void TString::assign(const TString& rObj){
   if (this->mLength == rObj.mLength && this->mpText == rObj.mpText)
     return;
   else{
-    delete this;
-    int length = strlen(rObj.mpText);
-    this->mpText = new char[length];
-    strncpy(this->mpText, rObj.mpText, length);
+    delete [] mpText;
+    mpText = 0;
+    int len = strlen(rObj.mpText);
+    mpText = new char[len + 1];
+    strncpy(mpText, rObj.mpText, len + 1);
+    mLength = rObj.mLength;
   }
 }
 
@@ -51,28 +56,29 @@ void TString::assign(char *pArray){
   if (this->mpText == pArray)
     return;
   else{
-    delete this;
-    int length = strlen(pArray);
-    this->mpText = new char[length];
-    strncpy(this->mpText, pArray, length);
+    delete [] mpText;
+    mpText = 0;
+    int len = strlen(pArray);
+    mpText = new char[len + 1];
+    strncpy(mpText, pArray, len + 1);
   }
 }
 
 bool TString::equals(const TString &rObj){
   int len = strlen(rObj.mpText);
-  if (strncmp(this->mpText, rObj.mpText, len) == 0)
+  if (strncmp(mpText, rObj.mpText, len) == 0)
     return true;
   else
     return false;
 }
 
 int TString::indexOf(char nChar){
-  int len = strlen(this->mpText);
+  int len = strlen(mpText);
   int pos = 0;
   int leave = 0;
   do {
     for (int i = 0; i < len; ++i){
-      if (this->mpText[i] == nChar){
+      if (mpText[i] == nChar){
         pos = i;
         leave = 1;
       }
