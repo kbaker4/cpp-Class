@@ -1,0 +1,106 @@
+RINT:
+
+ 
+A test of the RINT class  (2/10/13)
+
+
+Here are the RINTs x = 0 and y = 4
+
+Here are the ints a = 5 and b = 2
+
+
+Testing stream input for RINT - enter an int value: 5
+
+You entered an RINT value of 5
+
+Testing copy ctor
+If z is instantiated as y, z = 4 (should be 4)
+
+TESTING BINARY +
+If z = x + y and x = 5 and y = 6  then z = 11 (should be 11)
+If z = x + 10 and x = 5  then z = 15 (should be 15)
+If z = 1 + x and x = 5  then z = 6 (should be 6)
+
+TESTING BINARY -
+If z = x - y and x = 24 and y = 30  then z = -6 (should be -6)
+If z = x - 10 and x = 24  then z = 14 (should be 14)
+If z = 1 - x and x = 24  then z = -23 (should be -23)
+
+TESTING UNARY + -
+x = -x  so x now = -1 (should be -1)
+x = +x  so x now = -1 (should be -1)
+Press any key to continue . . .
+
+
+ Errors:
+  Error	1	error C2676: binary '++' : 'RINT' does not define this operator or a conversion to a type acceptable to the predefined operator	
+  Error	2	error C2676: binary '+=' : 'RINT' does not define this operator or a conversion to a type acceptable to the predefined operator
+
+
+INT:
+ 
+
+A test of the INT class  (07/05/13)
+
+Testing default and copy ctor:
+---------------------------------------
+If INT x,y = 6; then x = 0 and y = 6 (should be 0 and 6)
+If INT w = 9 then w = 9 (should be 9)
+If INT z = y; (z is instantiated as y) z = 6 (should be 6)
+Here are the ints a = 5 and b = 2
+
+Testing overloaded cast (int) operator:
+---------------------------------------
+1: adding ints and INTS
+If x = y + z, then x = 12 (should be 12)
+If x = a + y, then x = 11 (should be 11)
+If x = y + b, then x = 8 (should be 8)
+
+2: subtracting ints and INTS
+If x = w - z, then x = 3 (should be 3)
+If x = y - b, then x = 4 (should be 4)
+If x = a-y, then x = -1 (should be -1)
+
+3: multiplying ints and INTS
+If x = w * z, then x = 54 (should be 54)
+If x = y * b, then x = 12 (should be 12)
+If x = a*y, then x = 30 (should be 30)
+
+4: dividing ints and INTS
+If x = w / z, then x = 1 (should be 1)
+If x = y / b, then x = 3 (should be 3)
+If x = (a + 7)/y, then x = 2 (should be 2)
+
+
+5: assignment
+If a = x  then a = 2 (should be 2)
+If x = 5  then x = 5 (should be 5)
+
+6: unary +-
+If a = +x then a = 5 (should be 5)  and x = 5 (should be 5)
+If a = -x then a = -5 (should be -5)  and x = 5 (should be 5)
+
+Testing increment/decrement operators:
+---------------------------------------
+Set x = 5
+b = x++ so b = 5 (should be 5)
+        and now x = 6 (should be 6)
+b = ++x so b = 7 (should be 7)
+        and now x = 7 ( should be 7)
+b = --x so b = 6 (should be 6)
+        and now x = 6 (should be 6)
+b = x-- so b = 6 (should be 6)
+        and now x = 5 (should be 5)
+
+Testing combined assignment operators:
+--------------------------------------
+If set x = 5 then x += 6 so x now equals 11 (should be 11)
+If set a = 13 then a += x + 43 ; therefore a now equals 67 (should be 67)
+If set x = 33 then x -= 17 so x now equals 16 (should be 16)
+
+Testing call to functions:
+--------------------------------------
+The absolute value of x is 16
+
+Done...
+Press any key to continue . . .
