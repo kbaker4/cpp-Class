@@ -6,7 +6,6 @@
 
 Shape* getShape(){
   //get the color of the shape or they can enter done
-  cout << "Enter a list of shapes - 'done' to end" << endl;
   cout << "Enter the shape's color (or 'done')..." << endl;
   string color;
   cin >> color;

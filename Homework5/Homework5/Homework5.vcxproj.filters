@@ -44,10 +44,10 @@
     <ClCompile Include="Rectangle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ShapeDemo.cpp">
+    <ClCompile Include="getShape.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="getShape.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
