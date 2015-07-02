@@ -1,13 +1,14 @@
 #include "Rectangle.h"
 
 
-Rectangle::Rectangle(const string& color, double length, double width){
+Rectangle::Rectangle(const string& color, double length, double width)
+  : Shape(color)
+{
   mLength = length;
   mWidth = width;
 }
 
-Rectangle::~Rectangle()
-{
+Rectangle::~Rectangle(){
 }
 
 const double Rectangle::area(){

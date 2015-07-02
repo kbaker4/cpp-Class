@@ -9,9 +9,9 @@ class Shape
 private:
   string mColor;
 public:
-  Shape();
   Shape(const string& color);
-  ~Shape();
+  Shape();
+  virtual ~Shape();
 
   const string getColor(){ return mColor; }
   virtual const double area() = 0;

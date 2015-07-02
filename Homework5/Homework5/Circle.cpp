@@ -1,12 +1,13 @@
 #include "Circle.h"
 
-Circle::Circle(const string& color, double radius){
+Circle::Circle(const string& color, double radius)
+  : Shape(color)
+{
   mRadius = radius;
 }
 
 
-Circle::~Circle()
-{
+Circle::~Circle(){
 }
 
 const double Circle::area(){

@@ -11,7 +11,7 @@ Shape* getShape(){
   string color;
   cin >> color;
   if (color == "done")
-    return nullptr; //null shape pointer
+    return NULL; //null shape pointer
 
   //get the shape type (circle, square, rectangle)
   cout << "Enter shape type..." << endl;

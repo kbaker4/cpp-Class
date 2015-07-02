@@ -1,12 +1,13 @@
 #include "Square.h"
 
-Square::Square(const string& color, double length){
+Square::Square(const string& color, double length)
+  : Shape(color)
+{
   mLength = length;
 }
 
 
-Square::~Square()
-{
+Square::~Square(){
 }
 
 const double Square::area(){
