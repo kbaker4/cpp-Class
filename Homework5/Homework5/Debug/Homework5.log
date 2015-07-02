@@ -1,5 +1,22 @@
-﻿Build started 7/1/2015 2:49:22 PM.
+﻿Build started 7/1/2015 9:36:19 PM.
+     1>Project "D:\c++ class\homework for github\Homework5\Homework5\Homework5.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         D:\Program Files (x86)\Visual Studio 2013 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Circle.cpp Rectangle.cpp Shape.cpp ShapeDemo.cpp Square.cpp getShape.cpp
+         Shape.cpp
+         Generating Code...
+         Compiling...
+         Square.cpp
+     1>d:\c++ class\homework for github\homework5\homework5\square.cpp(3): error C2512: 'Shape' : no appropriate default constructor available
+         Rectangle.cpp
+     1>d:\c++ class\homework for github\homework5\homework5\rectangle.cpp(4): error C2512: 'Shape' : no appropriate default constructor available
+         Circle.cpp
+     1>d:\c++ class\homework for github\homework5\homework5\circle.cpp(3): error C2512: 'Shape' : no appropriate default constructor available
+         Generating Code...
+         Skipping... (no relevant changes detected)
+         getShape.cpp
+         ShapeDemo.cpp
+     1>Done Building Project "D:\c++ class\homework for github\Homework5\Homework5\Homework5.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:01.01
+Time Elapsed 00:00:01.52

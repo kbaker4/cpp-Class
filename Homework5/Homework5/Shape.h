@@ -13,9 +13,9 @@ public:
   Shape(const string& color);
   ~Shape();
 
-  virtual const string getColor(){ return mColor; }
-  virtual const double area();
-  virtual const string toString();
+  const string getColor(){ return mColor; }
+  virtual const double area() = 0;
+  virtual const string toString() = 0;
 
 };
 
