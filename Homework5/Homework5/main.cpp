@@ -1,3 +1,9 @@
+// Kevin Baker
+// UMass Lowell
+// Professor Smith
+// C++ Programming
+// 2 JUL 15
+
 #include "Shape.h"
 #include "getShape.h"
 

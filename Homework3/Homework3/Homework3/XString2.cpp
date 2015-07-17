@@ -324,6 +324,7 @@ int main()
   // If the program aborts in this section, look at the code in the String ctors,
   // dtor, copy ctor, and assignment method to verify that dynamic memory
   // is managed correctly.
+  /*
   outstream << "\n----- Step " << ++step << " - Heap memory use -----" << endl;
   outstream << "Heap use test (this could take a minute or two): " << endl;
   {
@@ -368,7 +369,7 @@ int main()
     }
     outstream << "completed" << endl;
   }
-
+  */
   // Testing dynamically allocated String objects. Uses the -> member selection operator for a
   // pointer to an object.
   outstream << "\n----- Step " << ++step << " - Heap Strings -----" << endl;
