@@ -1,4 +1,6 @@
 #include "Rolodex.h"
+#include "Card.h"
+#include <sstream>
 
 void main(){
   /* defines and loads the rolodex object with the starting data (add a series of cards)
@@ -18,9 +20,50 @@ void main(){
   rolo.add(Card("Seymour", "Papert", "Lego Professor", "MIT", "555-1111"));
   rolo.add(Card("Fred", "Milton", "Sales", "12 Freedom Way Nashua, NH", "555-9981"));
 
-  /* list - displays the entire rolodex. can call Rolodex::show(..) to display all cards*/
+  cout << "Welcome to Rolodex." << endl << "Make a selection, your options are as shown:" << endl <<
+    "list - Display the entire Rolodex." << endl <<
+    "view - Display the currently selected card." << endl <<
+    "flip - Displays the next card in the Rolodex." << endl <<
+    "add - Add a new card to the Rolodex" << endl <<
+    "remove - Remove the currently selected card." << endl <<
+    "search - Find and display a card." << endl <<
+    "quit - Exit the program." << endl << endl;
+  std::stringstream os;
+  string output;
+  while (output != "quit"){
+    cout << "Enter your selection: ";
+    cin >> output;
+
+    if (output == "list"){
+      rolo.show(os);
+    }
+    else if (output == "view"){
+      Card card = rolo.getCurrentCard();
+      card.show(os);
+    }
+    else if (output == "flip"){
+      Card card = rolo.flip();
+      cout << card.firstname << " " << card.lastname << " " << card.occupation << " " 
+        << card.address << " " << card.phoneNumber << endl;
+    }
+    else if (output == "add"){
+
+    }
+    else if (output == "remove"){
+
+    }
+    else if (output == "search"){
+
+    }
+    else if (output == "quit"){
+      cout << "Goodbye..." << endl;
+    }
+  }
+
   /* view - displays card at the current position in rolodex. can call Rolodex::getCurrentCard()
   then call Card::show(..) on the returned card*/
+  //void view
+
   /*flip - updates the current rolodex position to the next card and displays it. flipped past the last wraps to front
   can call Rolodex::flip() to get next Card, then call Card::show(..) on it*/
 

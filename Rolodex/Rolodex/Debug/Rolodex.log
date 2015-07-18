@@ -1,18 +1,35 @@
-﻿Build started 7/17/2015 4:17:49 PM.
+﻿Build started 7/18/2015 4:05:57 PM.
      1>Project "D:\c++ class\homework for github\Rolodex\Rolodex\Rolodex.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\Program Files (x86)\Visual Studio 2013 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Rolodex.cpp main.cpp
+         D:\Program Files (x86)\Visual Studio 2013 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Rolodex.cpp
          Rolodex.cpp
-         Generating Code...
-         Skipping... (no relevant changes detected)
-         main.cpp
-       Link:
-         D:\Program Files (x86)\Visual Studio 2013 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\c++ class\homework for github\Rolodex\Debug\Rolodex.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\c++ class\homework for github\Rolodex\Debug\Rolodex.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\c++ class\homework for github\Rolodex\Debug\Rolodex.lib" /MACHINE:X86 Debug\Card.obj
-         Debug\main.obj
-         Debug\Rolodex.obj
-         Rolodex.vcxproj -> D:\c++ class\homework for github\Rolodex\Debug\Rolodex.exe
-     1>Done Building Project "D:\c++ class\homework for github\Rolodex\Rolodex\Rolodex.vcxproj" (Build target(s)).
+     1>d:\program files (x86)\visual studio 2013 12.0\vc\include\xutility(3026): error C2678: binary '==' : no operator found which takes a left-hand operand of type 'Card' (or there is no acceptable conversion)
+                 d:\program files (x86)\visual studio 2013 12.0\vc\include\system_error(410): could be 'bool std::operator ==(const std::error_condition &,const std::error_code &) throw()'
+                 d:\program files (x86)\visual studio 2013 12.0\vc\include\system_error(402): or       'bool std::operator ==(const std::error_code &,const std::error_condition &) throw()'
+                 d:\program files (x86)\visual studio 2013 12.0\vc\include\exception(507): or       'bool std::operator ==(const std::exception_ptr &,std::nullptr_t)'
+                 d:\program files (x86)\visual studio 2013 12.0\vc\include\exception(502): or       'bool std::operator ==(std::nullptr_t,const std::exception_ptr &)'
+                 d:\program files (x86)\visual studio 2013 12.0\vc\include\exception(497): or       'bool std::operator ==(const std::exception_ptr &,const std::exception_ptr &)'
+                 while trying to match the argument list '(Card, Card **const )'
+                 d:\program files (x86)\visual studio 2013 12.0\vc\include\xutility(3045) : see reference to function template instantiation '_InIt std::_Find<_InIt,_Ty>(_InIt,_InIt,const _Ty &,std::false_type)' being compiled
+                 with
+                 [
+                     _InIt=Card *
+         ,            _Ty=Card **
+                 ]
+                 d:\program files (x86)\visual studio 2013 12.0\vc\include\xutility(3054) : see reference to function template instantiation '_InIt std::_Find<Card*,_Ty>(_InIt,_InIt,const _Ty &)' being compiled
+                 with
+                 [
+                     _InIt=Card *
+         ,            _Ty=Card **
+                 ]
+                 d:\c++ class\homework for github\rolodex\rolodex\rolodex.cpp(36) : see reference to function template instantiation '_InIt std::find<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<Card>>>,Card**>(_InIt,_InIt,const _Ty &)' being compiled
+                 with
+                 [
+                     _InIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<Card>>>
+         ,            _Ty=Card **
+                 ]
+     1>Done Building Project "D:\c++ class\homework for github\Rolodex\Rolodex\Rolodex.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:00.68
+Time Elapsed 00:00:00.41

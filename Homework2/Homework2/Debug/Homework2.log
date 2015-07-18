@@ -1,15 +1,18 @@
-﻿Build started 6/4/2015 12:25:28 PM.
-     1>Project "C:\Users\Kevin.r.baker\Desktop\c++ class\Homework2\Homework2\Homework2.vcxproj" on node 2 (Build target(s)).
+﻿Build started 7/18/2015 11:39:25 AM.
+     1>Project "D:\c++ class\homework for github\Homework2\Homework2\Homework2.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Queue.cpp
+         D:\Program Files (x86)\Visual Studio 2013 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp Queue.cpp QueueItem.cpp
+         QueueItem.cpp
+     1>d:\c++ class\homework for github\homework2\homework2\queueitem.cpp(7): error C2536: 'QueueItem::QueueItem::_data' : cannot specify explicit initializer for arrays
+                 d:\c++ class\homework for github\homework2\homework2\queueitem.h(15) : see declaration of 'QueueItem::_data'
+     1>d:\c++ class\homework for github\homework2\homework2\queueitem.cpp(14): error C2059: syntax error : '['
+     1>d:\c++ class\homework for github\homework2\homework2\queueitem.cpp(19): error C2758: 'QueueItem::_itemId' : a member of reference type must be initialized
+                 d:\c++ class\homework for github\homework2\homework2\queueitem.h(16) : see declaration of 'QueueItem::_itemId'
          Queue.cpp
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Kevin.r.baker\Desktop\c++ class\Homework2\Debug\Homework2.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Kevin.r.baker\Desktop\c++ class\Homework2\Debug\Homework2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Kevin.r.baker\Desktop\c++ class\Homework2\Debug\Homework2.lib" /MACHINE:X86 Debug\main.obj
-         Debug\Queue.obj
-         Debug\QueueItem.obj
-         Homework2.vcxproj -> C:\Users\Kevin.r.baker\Desktop\c++ class\Homework2\Debug\Homework2.exe
-     1>Done Building Project "C:\Users\Kevin.r.baker\Desktop\c++ class\Homework2\Homework2\Homework2.vcxproj" (Build target(s)).
+         main.cpp
+         Generating Code...
+     1>Done Building Project "D:\c++ class\homework for github\Homework2\Homework2\Homework2.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:06.01
+Time Elapsed 00:00:00.92
