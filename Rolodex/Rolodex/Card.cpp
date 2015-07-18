@@ -1,8 +1,13 @@
 #include "Card.h"
+#include <iostream>
 
-
-Card::Card()
+Card::Card(string fname, string lname, string occ, string addr, string phone)
 {
+  firstname = fname;
+  lastname = lname;
+  occupation = occ;
+  address = addr;
+  phoneNumber = phone;
 }
 
 
@@ -24,4 +29,9 @@ void Card::setAddress(string addr){
 }
 void Card::setPhoneNumber(string phone){
   phoneNumber = phone;
+}
+
+void Card::show(Card& card){
+  // I think this is supposed to just print out the card requested to the console
+  cout << firstname << endl;
 }

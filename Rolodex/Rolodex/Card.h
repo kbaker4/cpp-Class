@@ -4,7 +4,7 @@ using namespace std;
 class Card
 {
 public:
-  Card();
+  Card(string fname, string lname, string occ, string addr, string phone);
   ~Card();
 
   string firstname, lastname, occupation, address, phoneNumber;
@@ -20,6 +20,8 @@ public:
   void setOccupation(string occ);
   void setAddress(string addr);
   void setPhoneNumber(string phone);
+
+  void show(Card& card);
 
   //std::string for first name, last name, occupation, address(one string), and phone number
   //get/set member functions to allow get/set of the member variables ^^^

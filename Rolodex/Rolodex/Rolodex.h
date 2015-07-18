@@ -1,4 +1,7 @@
 #pragma once
+#include "Card.h"
+#include <vector>
+
 class Rolodex
 {
 public:
@@ -12,9 +15,11 @@ public:
   // data input is done by code in main() and card objects are passed into and out of rolodex object
   // displaying cards is done by the rolodex code calling the cards display (show?) member function, passing an
   // ostream for it to display on.
+  vector<Card> rolo;
+  vector<Card>::const_iterator it;
 
   // member functions:
-  // add(Card& Card
+  void add(Card& newCard);
   /*Takes a card object as a param (by ref is more efficient), adds it to the STL container member(in appropriate spot -
   cards are kept in abc order by last name, first name), and sets it as current card in the rolodex by setting the STL iterator
   member to point at the card just added*/
@@ -40,6 +45,7 @@ public:
   iterate thru all the cards in the STL container from beginning to end, invoking each card's show() method, and passing 
   the ostream param. the rolodex show() doesn't do any actual output, itjust iterates thru the collection and requests
   each card to display its contents by calling its show() member function. current card remains unchanged*/
+  void show(Card& card);
 
 
 
