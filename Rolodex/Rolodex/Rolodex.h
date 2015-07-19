@@ -4,6 +4,7 @@
 #include <iostream>
 using namespace std;
 #include <string>
+#include <algorithm>
 
 class Rolodex
 {
@@ -47,8 +48,20 @@ public:
   eg if H is entered as last name, the first card with a last name following H in abc order is displayed.
   if there is no following card, the current position remains unchanged and false is returned*/
 
-  void show(ostream& os);
   /* iterate thru all the cards in the STL container from beginning to end, invoking each card's show() method, and passing 
   the ostream param. the rolodex show() doesn't do any actual output, itjust iterates thru the collection and requests
   each card to display its contents by calling its show() member function. current card remains unchanged*/
+  void show(ostream& os);
+
+ // friend bool operator== (const Card &a, const Card &b);
+  friend bool operator< (const Card &a, const Card &b);
 };
+
+
+//bool operator== (const Card &a, const Card &b){
+//  return a.lastname == b.lastname;
+//}
+
+bool operator< (const Card &a, const Card &b){
+  return a.lastname < b.lastname;
+}

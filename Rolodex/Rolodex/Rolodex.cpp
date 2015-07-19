@@ -17,6 +17,7 @@ void Rolodex::add(Card newCard){
   rolo.push_back(card);
   it = rolo.end()-1;
   pCurrentCard = card;
+  sort(rolo.begin(), rolo.end());
 }
 
 /* iterate thru all the cards in the STL container from beginning to end, invoking each card's show() method, and passing
@@ -33,7 +34,7 @@ void Rolodex::show(ostream& os){
 /*updates current card position to the next card in the rolodex STL container, and returns that card, if last card
 is flipped, wrap to the first card*/
 Card Rolodex::flip(){
-  it = find(rolo.begin(), rolo.end(), &pCurrentCard);
+ // it = find(rolo.begin(), rolo.end(), pCurrentCard->lastname);
   if (it == (rolo.end() -1) || it == rolo.end())
     it = rolo.begin();
   else
