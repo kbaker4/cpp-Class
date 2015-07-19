@@ -27,11 +27,11 @@ void main(){
     "add - Add a new card to the Rolodex" << endl <<
     "remove - Remove the currently selected card." << endl <<
     "search - Find and display a card." << endl <<
-    "quit - Exit the program." << endl << endl;
+    "quit - Exit the program." << endl;
   std::stringstream os;
   string output;
   while (output != "quit"){
-    cout << "Enter your selection: ";
+    cout << endl << "Enter your selection: ";
     cin >> output;
 
     if (output == "list"){
@@ -43,29 +43,53 @@ void main(){
     }
     else if (output == "flip"){
       Card card = rolo.flip();
-      cout << card.firstname << " " << card.lastname << " " << card.occupation << " " 
-        << card.address << " " << card.phoneNumber << endl;
+      card.show(os);
     }
     else if (output == "add"){
       string firstname, lastname, occupation, address, phoneNumber;
-      cout << "Enter first name: ";
+      cout << endl << "Enter first name: ";
       cin >> firstname;
       cout << "Enter last name: ";
       cin >> lastname;
       cout << "Enter occupation: ";
+      cin.ignore(numeric_limits<streamsize>::max(), '\n');
       getline(cin, occupation);
       cout << "Enter address: ";
-      cin >> address;
+      getline(cin, address);
       cout << "Enter phone number: ";
-      cin >> phoneNumber;
-      cout << endl;
+      getline(cin, phoneNumber);
       rolo.add(Card(firstname, lastname, occupation, address, phoneNumber));
+      Card card = rolo.getCurrentCard();
+      card.show(os);
     }
     else if (output == "remove"){
-
+      cout << endl << "Are you sure you want to remove: " << endl;
+      Card card = rolo.getCurrentCard();
+      card.show(os);
+      string answer;
+      cin >> answer;
+      if (answer == "Y" || answer == "y" || answer == "Yes" || answer == "yes")
+        rolo.remove();
+      cout << "Card removed. Current card is now: " << endl;
+      card = rolo.getCurrentCard();
+      card.show(os);
     }
     else if (output == "search"){
-
+      string firstname, lastname;
+      cout << "Enter the first name of the person: " << endl;
+      cin >> firstname;
+      cout << "Enter the last name of the person: " << endl;
+      cin >> lastname;
+      if (rolo.search(firstname, lastname)){
+        cout << endl << "Card found. Current card is now: " << endl;
+        Card card = rolo.getCurrentCard();
+        card.show(os);
+      }
+      else{
+        cout << endl << "Card not found. Current card is still: " << endl;
+        Card card = rolo.getCurrentCard();
+        card.show(os);
+      }
     }
     else if (output == "quit"){
       cout << "Goodbye..." << endl;
