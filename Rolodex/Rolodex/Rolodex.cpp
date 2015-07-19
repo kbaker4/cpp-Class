@@ -34,7 +34,7 @@ void Rolodex::show(ostream& os){
 /*updates current card position to the next card in the rolodex STL container, and returns that card, if last card
 is flipped, wrap to the first card*/
 Card Rolodex::flip(){
- // it = find(rolo.begin(), rolo.end(), pCurrentCard->lastname);
+  it = find(rolo.begin(), rolo.end(), pCurrentCard);
   if (it == (rolo.end() -1) || it == rolo.end())
     it = rolo.begin();
   else

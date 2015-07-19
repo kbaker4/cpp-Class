@@ -47,7 +47,19 @@ void main(){
         << card.address << " " << card.phoneNumber << endl;
     }
     else if (output == "add"){
-
+      string firstname, lastname, occupation, address, phoneNumber;
+      cout << "Enter first name: ";
+      cin >> firstname;
+      cout << "Enter last name: ";
+      cin >> lastname;
+      cout << "Enter occupation: ";
+      getline(cin, occupation);
+      cout << "Enter address: ";
+      cin >> address;
+      cout << "Enter phone number: ";
+      cin >> phoneNumber;
+      cout << endl;
+      rolo.add(Card(firstname, lastname, occupation, address, phoneNumber));
     }
     else if (output == "remove"){
 

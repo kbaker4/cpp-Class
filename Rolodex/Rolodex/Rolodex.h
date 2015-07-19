@@ -53,15 +53,6 @@ public:
   each card to display its contents by calling its show() member function. current card remains unchanged*/
   void show(ostream& os);
 
- // friend bool operator== (const Card &a, const Card &b);
-  friend bool operator< (const Card &a, const Card &b);
+  friend bool operator== (const Card &a, const Card &b) { return a.lastname == b.lastname; }
+  friend bool operator< (const Card &a, const Card &b) { return a.lastname < b.lastname; }
 };
-
-
-//bool operator== (const Card &a, const Card &b){
-//  return a.lastname == b.lastname;
-//}
-
-bool operator< (const Card &a, const Card &b){
-  return a.lastname < b.lastname;
-}
