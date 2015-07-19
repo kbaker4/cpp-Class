@@ -14,22 +14,13 @@ public:
   Rolodex();
   ~Rolodex();
 
-  // data member that is an STL container class to hold the set of card objects
-  // STL container used must be able to handle case of duplicate names
-  // Rolodex member functions just manage the STL collection of cards, and may have params or return values that are a Card object
-  // rolodex class doesn't have code to read data for new cards, printing cards
-  // data input is done by code in main() and card objects are passed into and out of rolodex object
-  // displaying cards is done by the rolodex code calling the cards display (show?) member function, passing an
-  // ostream for it to display on.
-
   vector<Card> rolo;
   vector<Card>::iterator it;
 
-  // member functions:
-  void add(Card newCard);
   /*Takes a card object as a param (by ref is more efficient), adds it to the STL container member(in appropriate spot -
   cards are kept in abc order by last name, first name), and sets it as current card in the rolodex by setting the STL iterator
   member to point at the card just added*/
+  void add(Card newCard);
 
   /*removes the current card from the rolodex stl container, returns it, and makes the following card the 'current card'.
   if the last card in the STL container is removed, current card should be set to first card (wraps)*/
@@ -54,5 +45,5 @@ public:
   void show(ostream& os);
 
   friend bool operator== (const Card &a, const Card &b) { return a.lastname == b.lastname; }
-  friend bool operator< (const Card &a, const Card &b) { return a.lastname < b.lastname; }
+  static bool comp(const Card &a, const Card &b);
 };

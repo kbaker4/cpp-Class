@@ -41,6 +41,9 @@ void Card::setPhoneNumber(string phone){
 }
 
 void const Card::show(ostream& os){
-  cout << endl << firstname << " " << lastname << " " << occupation << " " << address << " " << phoneNumber << endl;
+  os << endl << "Name: " << firstname << " " << lastname << endl
+    << "Occupation: " << occupation << endl
+    << "Address: " << address << endl
+    << "Phone Number: " << phoneNumber << endl;
   return;
 }

@@ -17,15 +17,31 @@ void Rolodex::add(Card newCard){
   rolo.push_back(card);
   pCurrentCard = card;
   it = find(rolo.begin(), rolo.end(), pCurrentCard);
-  sort(rolo.begin(), rolo.end());
+  sort(rolo.begin(), rolo.end(), comp);
+}
+bool Rolodex::comp(const Card &a, const Card &b){
+  if (a.lastname == b.lastname)
+    return a.firstname < b.firstname;
+  else
+    return a.lastname < b.lastname;
 }
 
 /*removes the current card from the rolodex stl container, returns it, and makes the following card the 'current card'.
 if the last card in the STL container is removed, current card should be set to first card (wraps)*/
 void Rolodex::remove(){
+  Card *tmpCard = pCurrentCard;
   it = find(rolo.begin(), rolo.end(), pCurrentCard);
+  if (it == (rolo.end() - 1) || it == rolo.end())
+    it = rolo.begin();
+  else
+    ++it;
+  *tmpCard = *it;
+  if (it == rolo.begin())
+    it = rolo.end()-1;
+  else
+    --it;
   rolo.erase(it);
-  *pCurrentCard = flip();
+  pCurrentCard = tmpCard;
 }
 
 /* iterate thru all the cards in the STL container from beginning to end, invoking each card's show() method, and passing

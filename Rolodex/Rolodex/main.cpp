@@ -28,7 +28,7 @@ void main(){
     "remove - Remove the currently selected card." << endl <<
     "search - Find and display a card." << endl <<
     "quit - Exit the program." << endl;
-  std::stringstream os;
+  ostream& os = cout;
   string output;
   while (output != "quit"){
     cout << endl << "Enter your selection: ";
@@ -58,6 +58,8 @@ void main(){
       getline(cin, address);
       cout << "Enter phone number: ";
       getline(cin, phoneNumber);
+
+      cout << "Adding new card for " << firstname << " " << lastname << endl;
       rolo.add(Card(firstname, lastname, occupation, address, phoneNumber));
       Card card = rolo.getCurrentCard();
       card.show(os);
@@ -76,9 +78,8 @@ void main(){
     }
     else if (output == "search"){
       string firstname, lastname;
-      cout << "Enter the first name of the person: " << endl;
+      cout << "Enter the first and last name of the person: " << endl;
       cin >> firstname;
-      cout << "Enter the last name of the person: " << endl;
       cin >> lastname;
       if (rolo.search(firstname, lastname)){
         cout << endl << "Card found. Current card is now: " << endl;
